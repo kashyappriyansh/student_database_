@@ -1,0 +1,179 @@
+body {
+    background: linear-gradient(135deg, #00c6ff, #0072ff, #ff6a00, #ffcc00); /* New gradient colors */
+    background-size: 400% 400%;
+    color: white;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+    animation: gradientAnimation 15s ease infinite; /* Add animation for the gradient background */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.container {
+    margin: 20px 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black for better contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 30px;
+    padding: 0;
+}
+
+.degree {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-container input {
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    border: 1px solid white;
+    height: 40px;
+    padding-left: 10px;
+    width: auto;
+    color: white;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-container input:focus {
+    border-color: #00aaff;
+    box-shadow: 0 0 5px #00aaff;
+    outline: none;
+}
+
+.icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.table {
+    border: 1px solid white;
+    width: 100%;
+    border-spacing: 0;
+    min-height: 200px;
+    overflow-x: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    font-weight: 600;
+}
+
+td {
+    border-right: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    transition: background-color 0.3s;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background for alternating rows */
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly lighter on hover */
+}
+
+.search {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    border: 1px solid white;
+    height: 40px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding-left: 10px;
+    color: white;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search:focus {
+    border-color: #00aaff;
+    box-shadow: 0 0 5px #00aaff;
+    outline: none;
+}
+
+.button {
+    height: 40px;
+    width: 400px;
+    margin: 20px;
+    margin-left: 0;
+    margin-top: 30px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+    background-color: #0088cc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    background-color: #0077aa;
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #00aaff;
+}
+
+/* Animated Background Particles */
+@keyframes moveParticles {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle fill="%23ffffff" fill-opacity="0.1" cx="50" cy="50" r="10"/><circle fill="%23ffffff" fill-opacity="0.1" cx="20" cy="80" r="5"/><circle fill="%23ffffff" fill-opacity="0.1" cx="80" cy="20" r="7"/></svg>') repeat;
+    animation: moveParticles 60s linear infinite;
+    opacity: 0.5;
+    z-index: -1;
+}

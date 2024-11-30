@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Module Test</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Management CRUD</h1>
+
+        <!-- Registration Form -->
+        <div id="registration-form">
+            <input type="text" placeholder="Name" id="reg-name">
+            <input type="email" placeholder="Email" id="reg-email">
+            <input type="password" placeholder="Password" id="reg-password">
+            <button class="button" type="submit" id="register" onclick="register()">Register</button>
+            <p>Already have an account? <a href="#" onclick="showLoginForm()" style="color: green;">Login</a></p>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" style="display:none;">
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="Password" id="password">
+            <button class="button" type="submit" id="login" onclick="login()">Login</button>
+            <p>Use your registred mail id as username</p>
+            <p>Don't have an account? <a href="#" onclick="showRegistrationForm()" style="color: green;">Register</a></p>
+            <p>Forgot your password? <a href="#" onclick="showForgotPasswordForm()" style="color: green;">Reset Password</a></p>
+        </div>
+
+        <!-- Forgot Password Form -->
+        <div id="forgot-password-form" style="display:none;">
+            <input type="email" placeholder="Enter your email" id="forgot-email">
+            <button class="button" type="submit" id="forgot-password" onclick="forgotPassword()">Send OTP</button>
+            <p>Remembered your password? <a href="#" onclick="showLoginForm()">Login</a></p>
+        </div>
+
+        <!-- Reset Password Form -->
+        <div id="reset-password-form" style="display:none;">
+            <input type="text" placeholder="Enter OTP" id="reset-otp">
+            <input type="password" placeholder="Enter new password" id="new-password">
+            <button class="button" type="submit" id="reset-password" onclick="resetPassword()">Reset Password</button>
+            <p>Back to <a href="#" onclick="showLoginForm()">Login</a></p>
+        </div>
+
+        <!-- OTP Form -->
+        <div id="otp-form" style="display:none;">
+            <input type="text" placeholder="Enter OTP" id="otp">
+            <button class="button" type="submit" id="verify-otp" onclick="verifyOtp()">Verify OTP</button>
+        </div>
+
+        <!-- Main Content -->
+        <div id="main-content" style="display:none;">
+            <div class="input-container">
+                <input type="text" placeholder="Name" id="name">
+                <input type="email" placeholder="Email" id="email">
+                <input type="text" placeholder="GPA" id="grade">
+                <input type="number" placeholder="Age" id="age">
+                <input type="text" placeholder="Branch" id="degree">
+            </div>
+
+            <button class="button" type="submit" id="submit" onclick="addStudent()">Add Student</button>
+        
+            <input class="search" type="text" id="search" onkeyup="search()" placeholder="Search By Name, email or Degree">
+
+            <table class="table" id="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>GPA</th>
+                        <th>Branch</th>
+                    </tr>
+                </thead>
+        
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
